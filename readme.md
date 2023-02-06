@@ -1,6 +1,6 @@
 # Decentralized Escrow Application
 
-This is an Escrow Dapp built with [Hardhat](https://hardhat.org/).
+This is an Escrow Dapp 
 
 ## Project Layout
 
@@ -14,9 +14,9 @@ There are three top-level folders:
 
 Install dependencies in the top-level directory with `npm install`.
 
-After you have installed hardhat locally, you can use commands to test and compile the contracts, among other things. To learn more about these commands run `npx hardhat help`.
+After you have installed hardhat locally, you can use commands to test and compile the contracts.
 
-Compile the contracts using `npx hardhat compile`. The artifacts will be placed in the `/app` folder, which will make it available to the front-end. This path configuration can be found in the `hardhat.config.js` file.
+Compile the contracts using `npx hardhat compile`. The artifacts will be placed in the `/app` folder, which will make it available to the front-end. 
 
 ## Front-End
 
@@ -24,3 +24,10 @@ Compile the contracts using `npx hardhat compile`. The artifacts will be placed 
 
 To run the front-end application run `npm start` from the `/app` directory. Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
+## Deploy locally 
+
+You can open up a local node with.... `npx hardhat node` , then go into the scrips folder, then into deploy.js and deploy the contract with... `npx hardhat run scripts/deploy.js`.  As you can see from the photos i posted the deploy scripts are set to fund the contract upon deployement with all the addresses added to to the constructor, then set for the arbiter to approve the escrow which will send funds to the beneficiary.
+
+## Deploy to Goeril 
+
+As you can see I have set the hardhat.config.js file to have Goeril as a network. You must modify the deploy scripts by harcoding in the deployer address, arbtier address, then beneficiary.  Add your .env file, populate the private key and API Key and deploy with... `npx hardhat run scripts/deploy.js --network goerli`
